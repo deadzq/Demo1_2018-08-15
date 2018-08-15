@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/echarts.common.min.js"></script>
+</head>
+<body>
+<div id="main" style="width: 600px;height: 600px;"></div>
+    
+ <script type="text/javascript">
+  var machart=echarts.init(document.getElementById('main')); 
+ var option={
+     //图表标题
+     title:{
+        text:'Echarts柱状图演示程序'
+     },
+     //触发鼠标放置显示数据提示
+      tooltip:{
+       trigger:'axis',
+       axisPointer:{
+         type:'shadow'
+       }
+     }, 
+     //显示图列
+       legend:{
+       data:['访问量','浏览量']
+     }, 
+     //x轴数据
+     xAxis:{
+       data:["Android","IOS","PC","Other"]
+     },
+     //Y轴数据
+     yAxis:{
+     },
+     //系列列表数据
+     series:[{
+        name:'访问量',
+        type:'line',
+        data:[500,700,300,100]
+     },
+     {
+        name:'浏览量',
+        type:'bar',
+        data:[300,200,100,600]
+     }]
+ };
+  
+ machart.setOption(option);
+
+ </script>
+</body>
+</html>
